@@ -40,7 +40,7 @@ export class PaypalSdkClient {
 
   constructor(options: ClientOptions = {}) {
     this.#rawClient = new RawClient({
-      ...buildCoreClientOptions(options),
+      ...buildCoreClientOptions(options, "PAYPAL_SDK_CLIENT_LOG"),
       defaultHeaders: [
         { name: "User-Agent", value: "PaypalSdkClient/2.29.0 TypeScript", schema: s.string() },
         { name: "X-APIMatic-Lang", value: "TypeScript", schema: s.string() },
